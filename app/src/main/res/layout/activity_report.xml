@@ -1,0 +1,62 @@
+<!-- report_crime_activity.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1B7B7"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/profile_icon2"
+        android:layout_width="105dp"
+        android:layout_height="83dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="0dp"
+        android:padding="16dp"
+        android:src="@drawable/crime_reporting" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        android:layout_width="223dp"
+        android:layout_height="194dp"
+        android:layout_gravity="center"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@drawable/common_full_open_on_phone" />
+
+    <Button
+        android:id="@+id/choose_image_button"
+        android:layout_width="157dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#615A5A"
+        android:text="Choose Image" />
+
+    <EditText
+        android:id="@+id/title_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/location_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Location" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#912E2E"
+        android:text="Submit" />
+
+</LinearLayout>

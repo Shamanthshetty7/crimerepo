@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1B7B7"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/profile_icon3"
+        android:layout_width="108dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:padding="16dp"
+        android:src="@drawable/crime_reporting" />
+
+    <ImageView
+        android:id="@+id/profile_ic"
+        android:layout_width="132dp"
+        android:layout_height="164dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="294dp"
+        android:layout_marginTop="-41dp"
+        android:layout_marginEnd="-15dp"
+        android:layout_marginBottom="608dp"
+        android:padding="16dp"
+        android:src="@drawable/profile_icon" />
+
+    <TextView
+        android:layout_width="213dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="96dp"
+        android:layout_marginEnd="115dp"
+        android:padding="16dp"
+        android:text="Recent Crimes"
+        android:textSize="20sp" />
+
+    <ListView
+        android:id="@+id/crime_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="220dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="104dp"
+        android:layout_weight="1"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:padding="16dp" />
+
+    <Button
+        android:id="@+id/report_crime_button"
+        android:layout_width="wrap_content"
+        android:layout_height="82dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="98dp"
+        android:layout_marginTop="638dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="11dp"
+        android:background="#CF1C1C"
+        android:padding="16dp"
+        android:text="Report Crime"
+        android:textSize="16sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="518dp"
+        android:drawableLeft="@drawable/baseline_add_location_alt_24"
+        android:padding="16dp"
+        android:text=" Location: "
+        android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/location_spinner"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="137dp"
+        android:layout_marginBottom="516dp"
+        android:padding="16dp" />
+
+
+</RelativeLayout>

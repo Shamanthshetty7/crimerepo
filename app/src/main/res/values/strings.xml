@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">crimerepo</string>
+    <string name="login_successful">Login Successful!</string>
+    <string name="profile_name">Name: %s</string>
+    <string name="profile_email">Email: %s</string>
+    <string name="profile_location">Location: %s</string>
+</resources>

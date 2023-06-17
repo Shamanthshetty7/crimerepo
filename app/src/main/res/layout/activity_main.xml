@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1B7B7">
+
+    <!-- Add your splash screen layout here -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="63dp"
+        android:layout_marginTop="97dp"
+        android:layout_marginEnd="46dp"
+        android:layout_marginBottom="468dp"
+        app:srcCompat="@drawable/crime_reporting" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="136dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="307dp"
+        android:layout_marginEnd="59dp"
+        android:layout_marginBottom="288dp"
+        android:fontFamily="@font/alegreya_sans_sc_medium"
+        android:text="Report Near By \t\t\t\t\t \t\tCrimes"
+        android:textColor="#A61818"
+        android:textSize="34sp" />
+</RelativeLayout>

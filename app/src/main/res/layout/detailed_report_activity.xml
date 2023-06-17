@@ -1,0 +1,65 @@
+<!-- detailed_report_activity.xml -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1B7B7"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/crime_image_imageview"
+        android:layout_width="357dp"
+        android:layout_height="209dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="485dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/title_textview"
+        android:layout_width="369dp"
+        android:layout_height="75dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="238dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="402dp"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description_textview"
+        android:layout_width="366dp"
+        android:layout_height="253dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="126dp" />
+
+    <TextView
+        android:id="@+id/location_text"
+        android:layout_width="360dp"
+        android:layout_height="76dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="594dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="45dp" />
+
+</RelativeLayout>

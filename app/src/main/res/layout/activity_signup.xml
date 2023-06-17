@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1B7B7"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="198dp"
+        android:layout_height="81dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="93dp"
+        android:layout_marginTop="608dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="26dp"
+        android:background="#CF1C1C"
+        android:text="SignUp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="258dp"
+        android:layout_height="157dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="78dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="90dp"
+        app:srcCompat="@drawable/crime_reporting" />
+
+    <EditText
+        android:id="@+id/loginname"
+        android:layout_width="355dp"
+        android:layout_height="97dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="211dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="407dp"
+        android:drawableLeft="@drawable/baseline_person_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter  Username"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="360dp"
+        android:layout_height="88dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="303dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="324dp"
+        android:drawableLeft="@drawable/baseline_email_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter Email"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="365dp"
+        android:layout_height="93dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="383dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="239dp"
+        android:drawableLeft="@drawable/baseline_security_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter Password"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="374dp"
+        android:layout_height="91dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="471dp"
+        android:layout_marginBottom="154dp"
+        android:drawableLeft="@drawable/baseline_add_location_alt_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="Enter loaction"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/AlreadyHaveAccount"
+        android:layout_width="233dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="163dp"
+        android:layout_marginTop="561dp"
+        android:layout_marginEnd="0dp"
+        android:text="Already Have an Account?"
+        android:textColor="#0C0303"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>
