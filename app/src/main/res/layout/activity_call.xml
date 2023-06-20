@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F1B7B7"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="266dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="102dp"
+        android:layout_marginEnd="59dp"
+        android:padding="16dp"
+        android:text="Emergency Numbers"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/profile_icon4"
+        android:layout_width="108dp"
+        android:layout_height="85dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="2dp"
+        android:padding="16dp"
+        android:src="@drawable/crime_reporting" />
+
+    <ListView
+        android:id="@+id/emergency_numbers_listview"
+        android:layout_width="409dp"
+        android:layout_height="542dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="10dp"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
+
+</RelativeLayout>

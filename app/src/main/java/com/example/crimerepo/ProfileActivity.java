@@ -2,9 +2,12 @@ package com.example.crimerepo;
 
 import static android.content.ContentValues.TAG;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,7 +26,8 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView emailTextView;
 
     private DatabaseReference databaseReference;
-
+    private Button reports;
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +37,18 @@ public class ProfileActivity extends AppCompatActivity {
         nameTextView = findViewById(R.id.name_textview);
         locationTextView = findViewById(R.id.email_textview);
         emailTextView = findViewById(R.id.location_textview);
+        reports=findViewById(R.id.my_reports);
+        reports.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Start the ReportActivity
+                String userName = getIntent().getStringExtra("userName");
+                Intent intent=new Intent(ProfileActivity.this, Myreportlist.class);
+                intent.putExtra("userName", userName);
+                startActivity(intent);
 
+            }
+        });
         // Get the user name from the SignUpActivity
         Intent intent=getIntent();
 

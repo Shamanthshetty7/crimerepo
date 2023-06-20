@@ -24,6 +24,9 @@
         <activity android:name=".ReportActivity" />
         <activity android:name=".DisplayReportActivity" />
         <activity android:name=".ProfileActivity" />
+        <activity android:name=".EmergencyCall" />
+        <activity android:name=".Myreportlist" />
+        <activity android:name=".EditReportActivity" />
     </application>
 
 </manifest>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="Edit Report"
+        android:textAppearance="?android:textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/edit_title_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Title" />
+
+    <EditText
+        android:id="@+id/edit_description_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/edit_location_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Location" />
+
+    <ImageView
+        android:id="@+id/edit_image_view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+       />
+
+    <Button
+        android:id="@+id/choose_image_button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Choose Image" />
+
+    <Spinner
+        android:id="@+id/status_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:entries="@array/status_array" />
+
+    <Button
+        android:id="@+id/update_button"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Update" />
+
+</LinearLayout>

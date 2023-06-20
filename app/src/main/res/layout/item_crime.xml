@@ -1,5 +1,5 @@
 <!-- item_crime.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,18 +15,37 @@
 
     <TextView
         android:id="@+id/crime_title_textview"
-        android:layout_width="187dp"
+        android:layout_width="304dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
+        android:layout_marginStart="72dp"
         android:layout_marginTop="0dp"
-        android:layout_marginEnd="118dp"
+        android:layout_marginEnd="27dp"
         android:text="Crime Title"
-        android:textAppearance="?android:textAppearanceMedium" />
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#0C0202"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/display_status"
+        android:layout_width="274dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="8dp"
+        android:background="#6C4B4B"
+        android:text="status"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#611515"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 
-
-
-
-</LinearLayout>
+</RelativeLayout>

@@ -5,13 +5,16 @@ public class Crime {
     private String location;
     private String imageUri;
     private String description;
+    public String status;
+private String reportId;
 
-
-    public Crime(String title,String description, String location,String imageUri) {
+    public Crime(String reportId,String title,String description, String location,String imageUri,String status) {
         this.title = title;
         this.location = location;
         this.imageUri = imageUri;
         this.description= description;
+        this.reportId=reportId;
+        this.status=status;
     }
 
     public String getTitle() {
@@ -36,6 +39,11 @@ public class Crime {
     public String getImageUri() {
         return imageUri;
     }
+    public String getReportId() {
+        return reportId;
+    }
 
-
+    public CharSequence getStatus() {
+        return status;
+    }
 }

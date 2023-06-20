@@ -94,14 +94,33 @@
 
     <Spinner
         android:id="@+id/location_spinner"
-        android:layout_width="170dp"
+        android:layout_width="148dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="137dp"
-        android:layout_marginBottom="516dp"
+        android:layout_marginStart="126dp"
+        android:layout_marginBottom="514dp"
         android:padding="16dp" />
+
+    <Button
+        android:id="@+id/call_button"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="279dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="510dp"
+        android:background="#C89691"
+        android:contentDescription="Emergency Call"
+        android:drawableStart="@drawable/baseline_call_24"
+        android:drawableTint="#850505"
+        android:padding="16dp"
+        android:textSize="16sp" />
 
 
 </RelativeLayout>

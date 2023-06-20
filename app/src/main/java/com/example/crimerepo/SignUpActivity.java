@@ -1,5 +1,6 @@
 package com.example.crimerepo;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -23,8 +24,10 @@ TextView btn;
     private EditText emailEditText;
     private EditText passwordEditText;
     private EditText locationEditText;
+    private EditText repasswordEditText;
     private Button signUpButton;
      DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://crimereporter-9a347-default-rtdb.firebaseio.com/");
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +36,7 @@ TextView btn;
         nameEditText = findViewById(R.id.loginname);
         emailEditText = findViewById(R.id.editTextTextEmailAddress);
         passwordEditText = findViewById(R.id.editTextTextPassword);
+        repasswordEditText= findViewById(R.id.reneterPassword);
         locationEditText = findViewById(R.id.editTextText3);
         signUpButton = findViewById(R.id.signupButton);
         btn = findViewById(R.id.AlreadyHaveAccount);
@@ -56,6 +60,7 @@ TextView btn;
         String name = nameEditText.getText().toString();
         String email = emailEditText.getText().toString();
         String password = passwordEditText.getText().toString();
+        String repassword=repasswordEditText.getText().toString();
         String location = locationEditText.getText().toString();
         if(name.isEmpty() || name.length()<7)
         {
@@ -67,6 +72,8 @@ TextView btn;
         }
         else  if (password.isEmpty() || password.length() < 7 || !isValidPassword(password)) {
             showError(passwordEditText, "Password must be at least 7 characters and contain at least one uppercase letter, one lowercase letter, and one digit.");
+        }else  if (password!=repassword) {
+            showError(repasswordEditText, "Password mismatched");
         }
 
         else

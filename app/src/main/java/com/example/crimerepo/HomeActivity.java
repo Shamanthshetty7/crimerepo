@@ -1,6 +1,7 @@
 package com.example.crimerepo;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -65,12 +66,14 @@ public class HomeActivity extends AppCompatActivity {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, String previousChildName) {
-                // Do nothing
+                String selectedLocation = locationSpinner.getSelectedItem().toString();
+                updateCrimeList(selectedLocation);
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                // Do nothing
+                String selectedLocation = locationSpinner.getSelectedItem().toString();
+                updateCrimeList(selectedLocation);
             }
 
             @Override
@@ -107,6 +110,17 @@ public class HomeActivity extends AppCompatActivity {
                 // Do nothing
             }
         });
+        Button callButton = findViewById(R.id.call_button);
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Code to initiate the call to the emergency page
+                // For example, you can use an intent to open a phone dialer with the emergency number
+                Intent intent = new Intent(HomeActivity.this, EmergencyCall.class);
+
+                startActivity(intent);
+            }
+        });
 
         // Find the "Report Crime" button
         Button reportCrimeButton = findViewById(R.id.report_crime_button);
@@ -116,7 +130,10 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Start the ReportActivity
-                startActivity(new Intent(HomeActivity.this, ReportActivity.class));
+                String userName = getIntent().getStringExtra("userName");
+                Intent intent=new Intent(HomeActivity.this, ReportActivity.class);
+                intent.putExtra("userName", userName);
+                startActivity(intent);
             }
         });
         ImageView profileButton = findViewById(R.id.profile_ic);
@@ -143,12 +160,14 @@ public class HomeActivity extends AppCompatActivity {
                 intent.putExtra("title", selectedCrime.getTitle());
                 intent.putExtra("description", selectedCrime.getDescription());
                 intent.putExtra("location", selectedCrime.getLocation());
-                intent.putExtra("imageUri", selectedCrime.getImageUri()); // Pass the image URL as well
+                intent.putExtra("imageUri", selectedCrime.getImageUri());
+                intent.putExtra("Status", selectedCrime.getStatus()); // Pass the image URL as well
                 // Add other fields as needed
                 startActivity(intent);
             }
         });
     }
+
 
     // Method to update the location spinner with the retrieved location list
     private void updateLocationSpinner() {
@@ -165,10 +184,12 @@ public class HomeActivity extends AppCompatActivity {
         crimeRef.orderByChild("location").equalTo(selectedLocation).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, String previousChildName) {
+                String reportId = dataSnapshot.getKey();
                 String title = dataSnapshot.child("title").getValue(String.class);
                 String description = dataSnapshot.child("description").getValue(String.class);
                 String imageUri = dataSnapshot.child("image").getValue(String.class);
-                Crime crime = new Crime(title, description, selectedLocation, imageUri);
+                String status = dataSnapshot.child("status").getValue(String.class);
+                Crime crime = new Crime(reportId,title, description, selectedLocation, imageUri,status);
                 crimeAdapter.addCrime(crime);
             }
 

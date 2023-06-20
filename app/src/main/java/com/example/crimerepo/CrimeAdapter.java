@@ -37,6 +37,7 @@ public class CrimeAdapter extends ArrayAdapter<Crime> {
             holder = new ViewHolder();
             holder.crimeTitleTextView = convertView.findViewById(R.id.crime_title_textview);
             holder.crimeImageView = convertView.findViewById(R.id.crime_image_imageview);
+            holder.Status = convertView.findViewById(R.id.display_status);
 
             convertView.setTag(holder);
         } else {
@@ -44,7 +45,7 @@ public class CrimeAdapter extends ArrayAdapter<Crime> {
         }
 
         holder.crimeTitleTextView.setText(crime.getTitle());
-
+        holder.Status.setText(crime.getStatus());
 
         // Load the image using Glide
         if (crime.getImageUri() != null && !crime.getImageUri().isEmpty()) {
@@ -69,6 +70,7 @@ public class CrimeAdapter extends ArrayAdapter<Crime> {
         TextView crimeTitleTextView;
         TextView crimeLocationTextView;
         ImageView crimeImageView;
+        TextView Status;
     }
 
     public interface CrimeDeleteListener {

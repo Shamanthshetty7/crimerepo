@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,7 +31,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 public class ReportActivity extends AppCompatActivity {
-
+    private Spinner statusSpinner;
+    private ArrayAdapter<CharSequence> statusAdapter;
     private static final int PICK_IMAGE_REQUEST = 1;
 
     private ImageView imageView;
@@ -42,6 +45,7 @@ public class ReportActivity extends AppCompatActivity {
     private Uri selectedImageUri;
 
     private DatabaseReference databaseReference;
+
     StorageReference storageReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +60,10 @@ public class ReportActivity extends AppCompatActivity {
         locationEditText = findViewById(R.id.location_edit_text);
         chooseImageButton = findViewById(R.id.choose_image_button);
         submitButton = findViewById(R.id.submit_button);
-
+        statusSpinner = findViewById(R.id.status_spinner);
+        statusAdapter = ArrayAdapter.createFromResource(this, R.array.status_array, android.R.layout.simple_spinner_item);
+        statusAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        statusSpinner.setAdapter(statusAdapter);
         chooseImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -106,6 +113,7 @@ public class ReportActivity extends AppCompatActivity {
         String location = locationEditText.getText().toString().trim();
         String loggedInUser = getIntent().getStringExtra("userName");
 
+
         if (title.isEmpty() || description.isEmpty() || location.isEmpty() || selectedImageUri == null) {
             Toast.makeText(this, "Please fill in all fields and select an image", Toast.LENGTH_SHORT).show();
             return;
@@ -119,13 +127,14 @@ public class ReportActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Uri uri) {
                         String imgUri = uri.toString();
-
+                        String status = statusSpinner.getSelectedItem().toString();
                         // Save the crime report to the database
                         DatabaseReference reportRef = databaseReference.push();
                         reportRef.child("title").setValue(title);
                         reportRef.child("description").setValue(description);
                         reportRef.child("location").setValue(location);
                         reportRef.child("image").setValue(imgUri);
+                        reportRef.child("status").setValue(status);
                         reportRef.child("userId").setValue(loggedInUser);
 
                         Toast.makeText(ReportActivity.this, "Crime report submitted successfully", Toast.LENGTH_SHORT).show();

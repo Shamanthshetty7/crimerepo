@@ -51,10 +51,16 @@
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:hint="Location" />
+    <Spinner
+        android:id="@+id/status_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:entries="@array/status_array" />
 
     <Button
         android:id="@+id/submit_button"
-        android:layout_width="match_parent"
+        android:layout_width="311dp"
         android:layout_height="wrap_content"
         android:background="#912E2E"
         android:text="Submit" />
