@@ -1,6 +1,7 @@
 package com.example.crimerepo;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
     private CrimeAdapter crimeAdapter;
     private DatabaseReference crimeRef;
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -189,7 +191,8 @@ public class HomeActivity extends AppCompatActivity {
                 String description = dataSnapshot.child("description").getValue(String.class);
                 String imageUri = dataSnapshot.child("image").getValue(String.class);
                 String status = dataSnapshot.child("status").getValue(String.class);
-                Crime crime = new Crime(reportId,title, description, selectedLocation, imageUri,status);
+                String dateTime = dataSnapshot.child("datetime").getValue(String.class);
+                Crime crime = new Crime(reportId,title, description, selectedLocation, imageUri,status,dateTime);
                 crimeAdapter.addCrime(crime);
             }
 

@@ -2,6 +2,7 @@ package com.example.crimerepo;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +24,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText nameEditText, passwordEditText;
     private Button loginButton;
     private TextView switchTab;
+    private SharedPreferences sharedPreferences;
+
+    private SessionManager sessionManager;
     DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReferenceFromUrl("https://crimereporter-9a347-default-rtdb.firebaseio.com");
 
     @SuppressLint({"WrongViewCast", "MissingInflatedId"})
@@ -30,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
+        sessionManager = new SessionManager(this);
         // Initialize views
         nameEditText = findViewById(R.id.loginname);
         passwordEditText = findViewById(R.id.password);
@@ -64,6 +68,9 @@ public class LoginActivity extends AppCompatActivity {
                                         final String getPassword=snapshot.child(username).child("Password").getValue(String.class);
                                         if(getPassword.equals(password)){
                                             Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+
+                                            sessionManager.setLoggedIn(true);
+                                            sessionManager.setUsername(username);
                                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                                             intent.putExtra("userName", username);
                                             startActivity(intent);

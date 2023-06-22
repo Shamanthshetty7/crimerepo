@@ -54,7 +54,8 @@ public class Myreportlist extends AppCompatActivity {
                     String imageUrl = snapshot.child("image").getValue(String.class);
                     String location = snapshot.child("location").getValue(String.class);
                     String status = snapshot.child("status").getValue(String.class);
-                    reportList.add(new Crime(reportId,title,description,location, imageUrl,status));
+                    String dateTime = snapshot.child("datetime").getValue(String.class);
+                    reportList.add(new Crime(reportId,title,description,location, imageUrl,status,dateTime));
                 }
 
                 // Notify the adapter that the data has changed

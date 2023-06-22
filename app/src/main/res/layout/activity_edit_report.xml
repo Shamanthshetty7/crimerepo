@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1B7B7"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -33,8 +34,7 @@
         android:id="@+id/edit_image_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:scaleType="centerCrop"
-       />
+        android:scaleType="centerCrop" />
 
     <Button
         android:id="@+id/choose_image_button"

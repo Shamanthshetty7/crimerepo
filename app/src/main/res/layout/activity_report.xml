@@ -46,11 +46,6 @@
         android:layout_height="48dp"
         android:hint="Description" />
 
-    <EditText
-        android:id="@+id/location_edit_text"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Location" />
     <Spinner
         android:id="@+id/status_spinner"
         android:layout_width="match_parent"

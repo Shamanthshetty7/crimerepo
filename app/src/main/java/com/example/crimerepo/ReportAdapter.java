@@ -39,6 +39,7 @@ public class ReportAdapter extends ArrayAdapter<Crime> {
             holder.titleTextView = convertView.findViewById(R.id.report_title_textview);
             holder.deleteButton = convertView.findViewById(R.id.delete_report_button);
             holder.editButton = convertView.findViewById(R.id.edit_report_button);
+            holder.dateTime=convertView.findViewById(R.id.datetime);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -52,6 +53,7 @@ public class ReportAdapter extends ArrayAdapter<Crime> {
                 .apply(RequestOptions.centerCropTransform())
                 .into(holder.reportImageView);
         holder.titleTextView.setText(report.getTitle());
+        holder.dateTime.setText(report.getDate());
         holder.deleteButton.setTag(position);
         holder.deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,5 +120,6 @@ public class ReportAdapter extends ArrayAdapter<Crime> {
         TextView titleTextView;
         ImageButton deleteButton;
         ImageButton editButton;
+        TextView dateTime;
     }
 }

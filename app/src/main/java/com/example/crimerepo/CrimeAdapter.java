@@ -8,16 +8,16 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
-
-import com.example.crimerepo.Crime;
-import com.squareup.picasso.Picasso;
-import com.squareup.picasso.RequestCreator;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
 public class CrimeAdapter extends ArrayAdapter<Crime> {
     private
     Context context;
+
+
     private List<Crime> crimeList;
 
     public CrimeAdapter(Context context, List<Crime> crimeList) {
@@ -38,13 +38,14 @@ public class CrimeAdapter extends ArrayAdapter<Crime> {
             holder.crimeTitleTextView = convertView.findViewById(R.id.crime_title_textview);
             holder.crimeImageView = convertView.findViewById(R.id.crime_image_imageview);
             holder.Status = convertView.findViewById(R.id.display_status);
-
+            holder.dateTime=convertView.findViewById(R.id.date);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
         }
 
         holder.crimeTitleTextView.setText(crime.getTitle());
+        holder.dateTime.setText(crime.getDate());
         holder.Status.setText(crime.getStatus());
 
         // Load the image using Glide
@@ -71,6 +72,7 @@ public class CrimeAdapter extends ArrayAdapter<Crime> {
         TextView crimeLocationTextView;
         ImageView crimeImageView;
         TextView Status;
+        TextView dateTime;
     }
 
     public interface CrimeDeleteListener {

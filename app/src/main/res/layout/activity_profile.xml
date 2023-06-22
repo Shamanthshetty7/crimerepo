@@ -6,105 +6,89 @@
 
     <ImageView
         android:id="@+id/profile_icon"
-        android:layout_width="389dp"
-        android:layout_height="191dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
+        android:layout_width="259dp"
+        android:layout_height="177dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="26dp"
         android:src="@drawable/profile_icon" />
 
-    <TextView
-        android:id="@+id/name_textview"
-        android:layout_width="228dp"
-        android:layout_height="72dp"
-        android:layout_below="@id/profile_icon"
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="74dp"
+        android:layout_height="33dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="213dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="430dp"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/email_textview"
-        android:layout_width="230dp"
-        android:layout_height="65dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="269dp"
-        android:layout_marginBottom="381dp"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/location_textview"
-        android:layout_width="312dp"
-        android:layout_height="87dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="76dp"
-        android:layout_marginTop="326dp"
-        android:layout_marginEnd="7dp"
-        android:layout_marginBottom="302dp"
-        android:textSize="16sp" />
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="39dp"
+        android:background="#FA6D6D"
+        android:text="Logout" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="140dp"
-        android:layout_height="55dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="215dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profile_icon"
+        android:layout_marginTop="32dp"
         android:text="Name:"
         android:textColor="#100303"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/name_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textView2"
+        android:layout_toEndOf="@id/textView2"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView2"
+        android:layout_marginTop="16dp"
+        android:text="Email:"
+        android:textColor="#0E0303"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/email_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textView4"
+        android:layout_toEndOf="@id/textView4"
+        android:textSize="16sp" />
+
+    <TextView
         android:id="@+id/textView3"
-        android:layout_width="162dp"
-        android:layout_height="48dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="274dp"
-        android:layout_marginEnd="233dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView4"
+        android:layout_marginTop="16dp"
         android:text="Location:"
         android:textColor="#0E0202"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="114dp"
-        android:layout_height="74dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="329dp"
-        android:layout_marginEnd="281dp"
-        android:text="Email:"
-        android:textColor="#0E0303"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:id="@+id/location_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/textView3"
+        android:layout_toEndOf="@id/textView3"
+        android:textSize="16sp" />
 
     <Button
         android:id="@+id/my_reports"
-        android:layout_width="196dp"
-        android:layout_height="66dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="180dp"
-        android:layout_marginBottom="237dp"
+        android:layout_width="115dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/location_textview"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="32dp"
         android:background="#E14848"
         android:text="My Reports" />
 

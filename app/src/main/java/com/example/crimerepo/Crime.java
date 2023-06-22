@@ -7,14 +7,16 @@ public class Crime {
     private String description;
     public String status;
 private String reportId;
+private String dateTime;
 
-    public Crime(String reportId,String title,String description, String location,String imageUri,String status) {
+    public Crime(String reportId,String title,String description, String location,String imageUri,String status,String dateTime) {
         this.title = title;
         this.location = location;
         this.imageUri = imageUri;
         this.description= description;
         this.reportId=reportId;
         this.status=status;
+        this.dateTime=dateTime;
     }
 
     public String getTitle() {
@@ -45,5 +47,10 @@ private String reportId;
 
     public CharSequence getStatus() {
         return status;
+    }
+
+    public String getDate() {
+
+        return dateTime;
     }
 }

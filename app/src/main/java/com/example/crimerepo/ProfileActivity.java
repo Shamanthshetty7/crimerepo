@@ -4,11 +4,13 @@ import static android.content.ContentValues.TAG;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,20 +26,23 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView nameTextView;
     private TextView locationTextView;
     private TextView emailTextView;
-
+    private SharedPreferences sharedPreferences;
     private DatabaseReference databaseReference;
+    private SessionManager sessionManager;
     private Button reports;
+    private Button logoutButton;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+        sessionManager = new SessionManager(this);
         // Initialize views
         nameTextView = findViewById(R.id.name_textview);
         locationTextView = findViewById(R.id.email_textview);
         emailTextView = findViewById(R.id.location_textview);
         reports=findViewById(R.id.my_reports);
+        logoutButton=findViewById(R.id.logout);
         reports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,6 +54,19 @@ public class ProfileActivity extends AppCompatActivity {
 
             }
         });
+        // Logout button click listener
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sessionManager.setLoggedIn(false);
+                sessionManager.setUsername("");
+                Toast.makeText(ProfileActivity.this, "Logged out successfully!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
         // Get the user name from the SignUpActivity
         Intent intent=getIntent();
 

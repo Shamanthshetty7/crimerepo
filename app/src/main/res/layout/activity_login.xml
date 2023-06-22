@@ -51,7 +51,7 @@
         android:layout_marginTop="329dp"
         android:layout_marginEnd="13dp"
         android:layout_marginBottom="302dp"
-        android:drawableLeft="@drawable/baseline_security_24"
+        android:drawableLeft="@drawable/baseline_password_24"
         android:drawablePadding="10dp"
         android:ems="10"
         android:hint="Enter Your Password"
